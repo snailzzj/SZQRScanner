@@ -9,7 +9,7 @@
 
     SZQRScanner *sz = [[SZQRScanner alloc]initWithFrame:self.view.frame];
     sz.delegate = self;
-    sz.scanRect = CGRectMake(size.width/2-100, 100, 200, 200);  //实际有效扫描区域
+    sz.scanRect = CGRectMake(size.width/2-100, 100, 200, 200);  //实际有效扫描区域，不设置默认为SZQRScanner的大小
     [self.view addSubview:sz];
     [sz start];
 }
