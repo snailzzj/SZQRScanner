@@ -30,7 +30,7 @@
 
 //more...
 //scale：二维码放大比例
-//correctionLevel：二维码图片破碎识别率
+//correctionLevel：二维码图片容错率
 + (UIImage *)makeQRImageWithString:(NSString *)qrString;
 + (UIImage *)makeQRImageWithString:(NSString *)qrString scale:(CGFloat)scale;
 + (UIImage *)makeQRImageWithString:(NSString *)qrString correctionLevel:(SZQR_LEVEL)level;
