@@ -4,11 +4,15 @@
 ----------------
 
 ```Objective-C
-SZQRScanner *sz = [[SZQRScanner alloc]initWithFrame:self.view.frame];
-sz.delegate = self;
-sz.scanRect = CGRectMake(size.width/2-100, 100, 200, 200);  //实际有效扫描区域
-[self.view addSubview:sz];
-[sz start];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    SZQRScanner *sz = [[SZQRScanner alloc]initWithFrame:self.view.frame];
+    sz.delegate = self;
+    sz.scanRect = CGRectMake(size.width/2-100, 100, 200, 200);  //实际有效扫描区域
+    [self.view addSubview:sz];
+    [sz start];
+}
 
 #pragma mark - SZQRScannerDelegate
 - (void)szQRScanner:(SZQRScanner *)szQRScanner scanString:(NSString *)result
@@ -22,7 +26,7 @@ sz.scanRect = CGRectMake(size.width/2-100, 100, 200, 200);  //实际有效扫描
 ----------------
 ```Objective-C
 //simple
-[SZQRScanner makeQRImageWithString:@"http://www.zzjblog.com/"]
++ (UIImage *)makeQRImageWithString:(NSString *)qrString;
 
 //more...
 //scale：二维码放大比例
